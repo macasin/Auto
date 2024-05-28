@@ -35,4 +35,7 @@ class Database:
         record=self.cursor.fetchall()
         return record
 
-        
+    def add_newProduct(self,product_id,name,description,quantity):
+        query=f"INSERT INTO products (id,name,description,quantity) VALUES ({product_id},'{name}','{description}','{quantity}')"
+        self.cursor.execute(query)
+        self.connection.commit
