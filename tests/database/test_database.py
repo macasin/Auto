@@ -29,4 +29,20 @@ def test_checkTheQuatityInProductAfterUpdate():
 
     assert water_qnt[0][0]==25 #test that check the quantity of water
 
+@pytest.mark.database
+def test_newAddedProduct():
+    db=Database()
+    db.add_newProduct(15, 'cookies', 'with chocolate', 30)
+    water_qnt=db.get_showTheChangesInProductByID(15)
 
+    assert water_qnt[0][0]==30 #test that check that new product was added with valid qnt
+
+@pytest.mark.database
+def test_dataDeleted():
+    db=Database()
+    db.delete_product(15)
+    qnt=db.get_showTheChangesInProductByID(15)
+
+    assert len(qnt)==0
+
+ 
