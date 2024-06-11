@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 
-@pytest.mark.uigit
+@pytest.mark.uigitv1
 
 def test_checkIncorrectUserName():
     #Створення обєкту для керування браузером
